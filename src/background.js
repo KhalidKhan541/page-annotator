@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((msg, s, resp) => { if(msg.action === 'annotate') { chrome.tabs.sendMessage(s.tab.id, {action: 'addAnnotation', text: msg.text, x: msg.x, y: msg.y}); resp({success: true}); } });
